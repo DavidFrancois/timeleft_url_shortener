@@ -11,18 +11,18 @@ export class ShortenerService {
     const apiUrl = process.env.API_URL || 'http://localhost:8080/';
 
     // Generate a short url that don't collide with existing ones
-    const shortUrl = `${apiUrl}${Math.random().toString(36).substring(2, 8)}`;
+    const shortCode = `${Math.random().toString(36).substring(2, 8)}`;
 
     const written = await this.prisma.url.create({
       data: {
         original: originalUrl,
-        short: shortUrl,
+        short: shortCode,
         ttl: ttl
           ? BigInt(ttl)
           : BigInt(process.env.DEFAULT_TTL_MINUTES || '60'),
       },
     });
 
-    return written.short;
+    return `${apiUrl}${written.short}`;
   }
 }
