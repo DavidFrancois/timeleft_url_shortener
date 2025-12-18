@@ -25,7 +25,6 @@ export class RedirectService {
 
     // We don't renew TTL on access, but could, it depends on the use case but it's more of a business decision
     // We'd hit scalability by other means first most likely
-
     return { originalUrl: record.original };
   }
 }
