@@ -1,7 +1,17 @@
-import { IsUrl, IsOptional, IsNumber, Max, Min } from 'class-validator';
+import {
+  IsUrl,
+  IsOptional,
+  IsNumber,
+  Max,
+  Min,
+  MinLength,
+  MaxLength,
+} from 'class-validator';
 
 export class ShortenUrlDto {
   @IsUrl()
+  @MinLength(25)
+  @MaxLength(2048)
   originalUrl: string;
 
   @IsOptional()
