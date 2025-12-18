@@ -15,7 +15,7 @@ generator client {
 }
 
 model Url {
-  id         String   @id @default(cuid())
+  id         Int      @id @default(autoincrement())
   original   String
   short      String   @unique
   createdAt  DateTime @default(now())

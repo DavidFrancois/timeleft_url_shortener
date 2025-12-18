@@ -6,6 +6,7 @@ import { RedirectService } from './redirect.service';
 export class RedirectController {
   constructor(private readonly redirectService: RedirectService) {}
 
+  // Since we don't have a GET route defined, this will catch all GET requests, but we should make sure of it if adding other use cases
   @Get(':shortCode')
   @Redirect()
   async redirect(@Param('shortCode') shortCode: string) {
