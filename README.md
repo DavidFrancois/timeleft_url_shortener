@@ -43,3 +43,5 @@ As of now the generation is not fully satisfying but it's ok for a first impleme
 
 
 Architecture wise I didn't bother with repositories and just splitted logic in two modules.
+
+And as I'm writing this I realise that there was a requirement on using PostgreSQL, I took a relative shortcut, that's on me.
