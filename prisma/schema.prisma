@@ -13,3 +13,11 @@ generator client {
   output        = "../src/generated/prisma"
   moduleFormat  = "cjs"
 }
+
+model Url {
+  id         String   @id @default(cuid())
+  original   String
+  short      String   @unique
+  createdAt  DateTime @default(now())
+  ttl        BigInt?
+}
