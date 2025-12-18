@@ -1,11 +1,5 @@
 ## SETUP
 
-
-```bash 
-npm install
-npm run start:dev
-```
-
 Make sure to create and fill a .env file at project's root. Here is one I used for testing : 
 
 ```
@@ -13,6 +7,13 @@ API_URL="http://localhost:8080/"
 DATABASE_URL="file:./dev.db"
 DEFAULT_TTL_MINUTES=60
 MAX_SHORTCODE_GENERATION_ATTEMPTS=5
+```
+
+```bash 
+npm install
+npm run start:dev
+npx prisma generate
+npx prisma db push
 ```
 
 ## Examples
